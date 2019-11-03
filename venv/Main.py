@@ -1,20 +1,14 @@
 import discord
 import Config
 
+from discord.ext import commands
 
-class MyClient(discord.Client):
+bot = commands.Bot(command_prefix='')
 
-    async def on_ready(self):
-        print('Logged on as', self.user)
+@bot.command()
+async def name(ctx):
+    embedMsg = discord.Embed(title="name", description="alt1, alt2, ...")
+    await ctx.send(embed=embedMsg)
 
-    async def on_message(self, message):
-        # don't respond to ourselves
-        if message.author == self.user:
-            return
+bot.run(Config.token)
 
-        if message.content == 'ping':
-            await message.channel.send('pong')
-
-
-client = MyClient()
-client.run(Config.token)
