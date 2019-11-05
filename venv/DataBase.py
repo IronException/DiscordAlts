@@ -1,21 +1,22 @@
 import json
 
 
+class Player:
 
-class player:
-    
-    def player():
-         
-    
+    def player(self):
+        pass
+
     # contains allvariables
-    
-    def addSelf(self, depo):
+
+    def add_self(self, depo):
         depo[self.name] = depo
 
 
 def load_data():
     name_depo = {}
-    new player(json).addSelf(name_depo)
+    new
+    player(json).addSelf(name_depo)
+
 
 def get_data(name):
     # somehow search the db now...
