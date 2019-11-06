@@ -1,5 +1,8 @@
 
-Bot.start_bot()
+
+from BotFile import start_bot
+
+start_bot()
 
 # load data
 
