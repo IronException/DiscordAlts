@@ -1,15 +1,21 @@
 import discord
 import Config
 
-from discord.ext import commands
+from DataBase import load_data
 
 
-def start_bot():
-    bot = commands.Bot(command_prefix='')
-    bot.run(Config.token)
+class MyClient(discord.Client):
+    async def on_ready(self):
+        print('Logged on as {0}!'.format(self.user))
+        await load_data()
+
+    async def on_message(self, message):
+        print('Message from {0.author}: {0.content}'.format(message))
+
+        if message.content.startswith("!test"):
+            channel = message.channel
+            await channel.send("test")
 
 
-@bot.command()
-async def name(ctx):
-    embed_msg = discord.Embed(title="name", description="alt1, alt2, ...")
-    await ctx.send(embed=embed_msg)
+client = MyClient()
+client.run(Config.token)

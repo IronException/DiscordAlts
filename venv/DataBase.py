@@ -3,7 +3,7 @@ import json
 
 class Player:
 
-    def player(self):
+    def __init__(self, json):
         pass
 
     # contains allvariables
@@ -14,8 +14,9 @@ class Player:
 
 def load_data():
     name_depo = {}
-    new
-    player(json).addSelf(name_depo)
+    print("loafing")
+    pl = Player
+    pl.add_self(name_depo)
 
 
 def get_data(name):

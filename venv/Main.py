@@ -1,8 +1,9 @@
 
 
-from BotFile import start_bot
+import BotFile
 
-start_bot()
+BotFile
+
 
 # load data
 
