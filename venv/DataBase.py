@@ -1,4 +1,5 @@
 import os, json
+import discord
 
 
 class Player:
@@ -43,8 +44,10 @@ def get_names():
 
 
 def get_embed_for(name, author, message):
+    embed = discord.Embed(title=name, color=0x008000)
     # somehow search the db now... test author wether he has acces,..? / actually I have to sptest this for all
     # people that do have access to that channel... test message for more specifications (attribute + embedstyle)
-    out = name_depo[name].all_data
-    print(out)
-    return out
+    data = name_depo[name].all_data
+    for field in data.keys():
+        embed.add_field(name=field, value=data[field], inline=True)
+    return embed

@@ -28,7 +28,7 @@ class MyClient(discord.Client):
 
         for name in db.get_names():
             if name_in_msg(name, message.content):
-                await message.channel.send(db.get_embed_for(name, message.author, message.content))
+                await message.channel.send(embed=db.get_embed_for(name, message.author, message.content))
 
 
 # to get all the data so the bot can return something
