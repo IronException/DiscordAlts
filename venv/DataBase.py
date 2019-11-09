@@ -10,7 +10,9 @@ class Player:
     # contains allvariables
 
     def add_self(self):
-        name_depo[self.all_data["name"]] = self
+        # we cant ignore if its deleted lol
+        print(self.all_data["name"])
+        name_depo[self.all_data["name"]["value"]] = self
 
 
 def get_files(dir):
@@ -49,5 +51,6 @@ def get_embed_for(name, author, message):
     # people that do have access to that channel... test message for more specifications (attribute + embedstyle)
     data = name_depo[name].all_data
     for field in data.keys():
-        embed.add_field(name=field, value=data[field], inline=True)
+        if not data[field]["deleted"] and data[field]["show"]:
+            embed.add_field(name=field, value=data[field]["value"], inline=True)
     return embed
