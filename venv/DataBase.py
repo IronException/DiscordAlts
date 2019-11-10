@@ -22,7 +22,7 @@ def get_files(dir):
 
     folders = [name for name in os.listdir(dir) if os.path.isdir(dir + "/" + name)]
     for f in folders:
-        for d in get_files(dir + "/" + f): # because it returns a list...
+        for d in get_files(dir + "/" + f):  # because it returns a list...
             json_files.append(d)
 
     return json_files
@@ -45,8 +45,32 @@ def get_names():
     return name_depo.keys()  # works?
 
 
+def do_change_thing():
+    pass
+
+
+def do_add_thing():
+    pass
+
+
 def get_embed_for(name, author, message):
     embed = discord.Embed(title=name, color=0x008000)
+
+    # find out which attribute here... and give it over as a parameter to the data. also remove it from the msg... so
+    # only the new data is in the message..
+    # also somehow when the bot is asking questions to add the things eg it should be checked first...
+
+    # TODO somhow do the perms with blacklist + whitelist like in
+
+    if "delete" in message: # could be merged with change? or is it too different
+        return do_delete_thing()
+
+    if "change" in message: # attribute?, new value + source...
+        return do_change_thing()
+
+    if "add" in message: # ask for attribute?, value, source, perms
+        return do_add_thing()
+
     # somehow search the db now... test author wether he has acces,..? / actually I have to sptest this for all
     # people that do have access to that channel... test message for more specifications (attribute + embedstyle)
     data = name_depo[name].all_data
