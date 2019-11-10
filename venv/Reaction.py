@@ -22,3 +22,14 @@ class FirstReaction(Question):
 
     def generate_next_question(self):
         return FirstReaction()
+
+
+current_question
+
+def react(message, viewers): # get next question somehow
+    current_question.react(message, viewers)
+
+def load_questions(json):
+    current_question = Question(json["0"])
+    
+    
