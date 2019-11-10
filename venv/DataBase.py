@@ -41,6 +41,14 @@ def load_data(dir):
         Player(open(file, "r").read()).add_self()
 
 
+global reaction
+reaction = FirstReaction
+
+
+def get_embed(message):
+    return reaction.react(message)
+
+"""
 def get_names():
     return name_depo.keys()  # works?
 
@@ -62,13 +70,13 @@ def get_embed_for(name, author, message):
 
     # TODO somhow do the perms with blacklist + whitelist like in
 
-    if "delete" in message: # could be merged with change? or is it too different
+    if "delete" in message:  # could be merged with change? or is it too different
         return do_delete_thing()
 
-    if "change" in message: # attribute?, new value + source...
+    if "change" in message:  # attribute?, new value + source...
         return do_change_thing()
 
-    if "add" in message: # ask for attribute?, value, source, perms
+    if "add" in message:  # ask for attribute?, value, source, perms
         return do_add_thing()
 
     # somehow search the db now... test author wether he has acces,..? / actually I have to sptest this for all
@@ -77,4 +85,4 @@ def get_embed_for(name, author, message):
     for field in data.keys():
         if not data[field]["deleted"] and data[field]["show"]:
             embed.add_field(name=field, value=data[field]["value"], inline=True)
-    return embed
+    return embed"""
