@@ -1,37 +1,22 @@
-from abc import ABC, abstractmethod
-
-
-class Reaction(ABC):
-
-    def __init__(self):
-        super().__init__()
-
-    @abstractmethod
-    def react(self, data):
-        setup_next_question(self.generate_next_question())
-
-    @abstractmethod
-    def generate_next_question(self):
-        return None
-
 
 class Question:
 
     def __init__(self, json):
+        self.question = json["question"]
+        self.next_question = json["nextQuestion"]
 
 
-    def react(self, data):
-        super().reaction(data)
-
-    def generate_next_question(self):
-        return FirstReaction()
+    def react(self, message):
+        # save message? somehow
+        return questions[self.nextquestion]
 
 questions = {}
 current_question
 
 
-def react(message, viewers):  # get next question somehow
-    current_question.react(message, viewers)
+def react(message, viewers):
+    # bot gets answer from viewer and returns next step. questions or anything have to be asked in there
+    current_question = current_question.react(message, viewers)
 
 
 def load_questions(json):
