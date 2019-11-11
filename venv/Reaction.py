@@ -24,3 +24,8 @@ def load_questions(json):
         questions[j] = Question(json[j])
     current_question = questions["0"]
 
+    """
+    1.: change, add / + (asks wether player or where attribute...), delete / remove / rem / -
+    then it asks the questions... but define all that there?
+    """
+

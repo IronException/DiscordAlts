@@ -41,16 +41,13 @@ def load_data(dir):
         Player(open(file, "r").read()).add_self()
 
 
-global reaction
-reaction = FirstReaction
-
-
 def get_embed(message):
     return reaction.react(message)
 
-"""
+
 def get_names():
     return name_depo.keys()  # works?
+
 
 
 def do_change_thing():
@@ -85,4 +82,4 @@ def get_embed_for(name, author, message):
     for field in data.keys():
         if not data[field]["deleted"] and data[field]["show"]:
             embed.add_field(name=field, value=data[field]["value"], inline=True)
-    return embed"""
+    return embed

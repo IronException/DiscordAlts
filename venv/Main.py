@@ -26,9 +26,14 @@ class MyClient(discord.Client):
         if message.author.id == self.user.id:
             return
 
+        # TODO ignore some channels. or whitelist some
+
         for name in db.get_names():
             if name_in_msg(name, message.content):
-                await message.channel.send(embed=db.get_embed_for(name, message.author, message.content))
+                msg = await message.channel.send(embed=db.get_embed_for(name, message.author, message.content))
+                reactions = ['dart']
+                for emoji in reactions:
+                    await add_reaction(msg, emoji)
 
 
 # to get all the data so the bot can return something
