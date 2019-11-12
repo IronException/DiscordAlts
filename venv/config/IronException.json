@@ -1,0 +1,26 @@
+{
+	"name": {"show": true, "deleted": false, "value": "n"},
+	"field": {
+		"show": true,
+		"deleted": false,
+		"source": "desc... (safe names or sth extra?). for deltedt + show. if deleted it doesnt show either way",
+		"permission": ["this is getting out of hand"],
+		"value": "anything",
+		"lastUpdated": 0,
+		"history": [
+			{ "time": 0, "values": {"value": "value back then... + every other thing", "perm": ".... + old sources too..."}
+			}
+		]
+	},
+	"discord": {"show": true, "deleted": false, "value": "IronException#4092" },
+	"discordId": {"show": false, "deleted": false, "value": 226446871562944532},
+	"uuids": {"show": false, "deleted": false, "value": [
+	"same game here... also todo"
+	] },
+	
+	"main": {"show": true, "deleted": false, "value": "uuid"},
+	"alt1": {"show": true, "deleted": false, "value": "uuid"},
+	"nicks": {"show": true, "deleted": false, "value": "too lazy" },
+	"author": {"show": true, "deleted": false, "value": "IronException"},
+	"factions": {"show": true, "deleted": false, "value": "maybe put links here?"}
+}
