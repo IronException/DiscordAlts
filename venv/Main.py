@@ -28,12 +28,13 @@ class MyClient(discord.Client):
 
         # TODO ignore some channels. or whitelist some
 
+
         for name in db.get_names():
             if name_in_msg(name, message.content):
                 msg = await message.channel.send(embed=db.get_embed_for(name, message.author, message.content))
-                reactions = ['dart']
+                reactions = ['🛋']
                 for emoji in reactions:
-                    await add_reaction(msg, emoji)
+                    await msg.add_reaction(emoji)
 
 
 # to get all the data so the bot can return something
