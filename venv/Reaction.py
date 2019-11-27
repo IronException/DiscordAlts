@@ -1,6 +1,10 @@
 class FirstReaction:
 
     def react_to_message(self, msg):
+        for k in keywords.keys():
+            if is_in(content, k):
+                return keys[k].getReaction()
+        return self
         # stop here
 
         # we do not want the bot to reply to itself
