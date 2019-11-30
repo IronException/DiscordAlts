@@ -1,4 +1,4 @@
 venv/Config.py
-*.pyc
 venv/__pycache__
 venv/Scripts
+venv/Lib
