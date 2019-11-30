@@ -41,7 +41,7 @@ def load_data(dir):
         Player(open(file, "r").read()).add_self()
 
 
-def get_embed_for(name, author, message):
+def get_embed_for(name):
     embed = discord.Embed(title=name, color=0x008000)
 
     # find out which attribute here... and give it over as a parameter to the data. also remove it from the msg... so
