@@ -1,5 +1,5 @@
 
-def is_in_msg(word, msg):
+def is_in(word, msg):
     if not (word in msg):
         return False
     ind = msg.find(word)
