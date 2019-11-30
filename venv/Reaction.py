@@ -1,9 +1,20 @@
+import Helper
+import DataBase as db
+
+
 class FirstReaction:
 
-    def react_to_message(self, msg):
-        for k in keywords.keys():
-            if is_in(content, k):
-                return keys[k].getReaction()
+    def __init__(self):
+        self.keywords = {"add": TestReaction()}
+        # TODO add all reactions from test in here...
+
+    def react_to_discord_message(self, msg):
+
+
+        for k in self.keywords.keys():
+            if Helper.is_in(msg.content, k):
+                print("go to next reaction: \"" + str(self.keywords[k]) + "\" with \"" + k + "\" and content: \"" + msg.content + "\"")
+                return self.keywords[k]
         return self
         # stop here
 
@@ -21,6 +32,13 @@ class FirstReaction:
                 for emoji in reactions:
                     await
                     msg.add_reaction(emoji)
+
+
+class TestReaction:
+
+    def react_to_discord_message(self, msg):
+        msg.channel.send(embed=db.get_embed_for("n"))
+        return self
 
 
 def load_questions(json):
