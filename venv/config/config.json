@@ -1,0 +1,30 @@
+{
+  "token": "// TODO read token from here...",
+  "embeds": "?",
+  "commands": {
+    "prefix": "",
+    "onlyCommand": false,
+    "commandAtStart": false,
+    "askWhetherThisBotIsMeant": true,
+    "CRUD": {
+      "create": [
+         "create", "add", "+"
+       ],
+      "read": [
+        "read", ""
+      ],
+      "update":[
+        "update", "change"
+      ],
+      "delete": [
+        "delete", "remove", "rem", "-"
+      ]
+    },
+    "misc": "// TODO ?"
+  }
+}
+
+
+
+
+
